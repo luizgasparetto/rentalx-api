@@ -34,6 +34,12 @@ class UserRepository implements IUsersRepository {
     const user = await this.repository.findOne(id);
     return user;
   };
+
+  async delete(id: string): Promise<void> {
+    const user = await this.repository.findOne(id);
+
+    await this.repository.remove(user);
+  }
 }
 
 export { UserRepository }

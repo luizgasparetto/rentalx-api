@@ -34,6 +34,6 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
 })
 
 databaseConnection.then(() => {
-  console.log('Database connected');
+  console.log('database connected...');
   app.listen(3333, () => console.log('running server...'));
 }).catch((error) => console.log('Error: ', error.mensage));
