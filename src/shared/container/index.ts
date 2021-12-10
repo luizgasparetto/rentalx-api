@@ -1,9 +1,9 @@
 import { container } from "tsyringe";
-import { UserRepository } from "../../modules/accounts/repositories/implementations/UsersRepository";
+import { UserRepository } from "../../modules/accounts/infra/typeorm/repositories/UsersRepository";
 import { IUsersRepository } from "../../modules/accounts/repositories/IUsersRepository";
 import { ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesRepository";
-import { CategoriesRepository } from "../../modules/cars/repositories/implementations/CategoriesRepository";
-import { SpecificationsRepository } from "../../modules/cars/repositories/implementations/SpecificationRepository";
+import { CategoriesRepository } from "../../modules/cars/infra/typeorm/repositories/CategoriesRepository";
+import { SpecificationsRepository } from "../../modules/cars/infra/typeorm/repositories/SpecificationRepository";
 import { ISpecificationRepository } from "../../modules/cars/repositories/ISpecificationRepository"
 
 // Singleton ->  Este padrão garante a existência de apenas uma instância de uma classe, mantendo um ponto global de acesso ao seu objeto.
