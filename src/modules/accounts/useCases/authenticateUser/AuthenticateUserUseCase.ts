@@ -1,11 +1,11 @@
 import { inject, injectable } from "tsyringe";
-import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
+import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 // Função para validar a senha pelo bcryptjs
 import { compare } from "bcryptjs"
 // Sign -> Usada para criar o webtoken
 import { sign } from "jsonwebtoken"
-import { AppError } from "@shared/errors/AppError";
+import { AppError } from "../../../../shared/errors/AppError";
 
 interface IRequest {
   email: string;

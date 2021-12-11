@@ -1,10 +1,10 @@
 // Iremos fazer o teste de autenticação de usuário, para que isso ocorra bem, precisamos fazer todo o fluxo da aplicação para que chegue até na parte de geração de token, ou seja, precisamos ter um usuário criado antes para executar o teste do token, por esse motivo, importamos o "CreateUserUseCase", para conseguirmos ter nosso usuário e efetuar o teste corretamente.
 
-import { AppError } from "@shared/errors/AppError";
-import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO";
-import { UserRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UsersRepositoryInMemory";
-import { CreateUserUseCase } from "@modules/accounts/useCases/createUser/CreateUserUseCase";
-import { AuthenticateUserUseCase } from "@modules/accounts/useCases/authenticateUser/AuthenticateUserUseCase";
+import { AppError } from "../../../../shared/errors/AppError";
+import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
+import { UserRepositoryInMemory } from "../../repositories/in-memory/UsersRepositoryInMemory";
+import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
+import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 
 
 let authenticateUserUseCase: AuthenticateUserUseCase;

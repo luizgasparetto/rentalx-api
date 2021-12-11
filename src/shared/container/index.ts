@@ -5,6 +5,8 @@ import { ICategoriesRepository } from "../../modules/cars/repositories/ICategori
 import { CategoriesRepository } from "../../modules/cars/infra/typeorm/repositories/CategoriesRepository";
 import { SpecificationsRepository } from "../../modules/cars/infra/typeorm/repositories/SpecificationRepository";
 import { ISpecificationRepository } from "../../modules/cars/repositories/ISpecificationRepository"
+import { ICarsRepository } from "../../modules/cars/repositories/ICarsRepository";
+import { CarsRepository } from "../../modules/cars/infra/typeorm/repositories/CarsRepository";
 
 // Singleton ->  Este padrão garante a existência de apenas uma instância de uma classe, mantendo um ponto global de acesso ao seu objeto.
 
@@ -27,4 +29,9 @@ container.registerSingleton<ISpecificationRepository>(
 container.registerSingleton<IUsersRepository>(
   "UserRepository",
   UserRepository
+)
+
+container.registerSingleton<ICarsRepository>(
+  "CarsRepository",
+  CarsRepository
 )

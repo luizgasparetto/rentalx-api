@@ -3,16 +3,16 @@ import express, { NextFunction, Request, Response } from 'express';
 import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
 
-import databaseConnection from "@shared/infra/typeorm";
+import createConnection from "../typeorm";
 
-import "@shared/container";
+import "../../container";
 
-import { AppError } from "@shared/errors/AppError";
+import { AppError } from "../../errors/AppError";
 import { router } from './routes';
 import swaggerFile from "../../../swagger.json";
 
+createConnection();
 const app = express();
-
 app.use(express.json());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
@@ -33,7 +33,4 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
   })
 })
 
-databaseConnection.then(() => {
-  console.log('database connected...');
-  app.listen(3333, () => console.log('running server...'));
-}).catch((error) => console.log('Error: ', error.mensage));
+app.listen(3333, () => console.log("server open..."))
